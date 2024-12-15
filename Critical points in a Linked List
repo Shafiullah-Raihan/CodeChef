@@ -1,0 +1,41 @@
+///https://www.codechef.com/practice/course/linked-lists/LINKLISTF/problems/CRITLIST
+
+/*
+Node is defined as:
+class Node{
+  public:
+  int data;
+  Node* next;
+  Node(int data){
+      this->data = data;
+      this->next = nullptr;
+  }
+}
+*/
+int solve(Node* head){
+    int cnt =0;
+    if(head == nullptr || head ->next == nullptr) return 0;
+    Node* prev = nullptr; 
+    Node* current = head;  
+    Node* next = nullptr; 
+    
+    
+    
+    while(current != nullptr && current->next != nullptr){
+        next = current->next;
+        
+         if (prev != nullptr && current->data > prev->data && current->data > next->data) {
+           
+            cnt++;
+        } 
+        else if (prev != nullptr && current->data < prev->data && current->data < next->data) {
+           
+            cnt++;
+        }
+        
+        
+        prev = current;
+        current = next;
+    }
+    return cnt;
+}
