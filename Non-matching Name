@@ -1,0 +1,59 @@
+///https://www.codechef.com/START157D/problems/ABNOMAT
+#include <bits/stdc++.h>
+using namespace std;
+
+bool hasAllAlphabets(const string& str1, const string& str2) {
+    
+   vector<bool> alphabet(26, false);
+
+    
+    auto markAlphabet = [&](const std::string& str) {
+        for (char ch : str) {
+            if (std::isalpha(ch)) {
+                
+                alphabet[std::tolower(ch) - 'a'] = true;
+            }
+        }
+    };
+
+    
+    markAlphabet(str1);
+    markAlphabet(str2);
+
+    
+    for (bool present : alphabet) {
+        if (!present) {
+            return false;  // If any letter is missing, return false
+        }
+    }
+
+    return true;  // All letters are present
+}
+
+int main() {
+    
+
+    int t;cin>>t;
+    while(t--){
+        int lena , lenb;
+        cin>>lena>>lenb;
+        string a,b;
+        cin>>a>>b;
+        if (hasAllAlphabets(a, b)) {
+        std::cout << "No\n";
+    } else {
+        std::cout << "Yes\n";
+    }
+        
+
+}
+    
+
+    
+    
+
+    
+    
+
+    return 0;
+}
