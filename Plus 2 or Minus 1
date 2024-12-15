@@ -1,0 +1,28 @@
+///https://www.codechef.com/problems/PLUS2MINUS1
+
+#include<bits/stdc++.h>
+using namespace std;
+#define file() freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
+#define endl "\n"
+#define ll long long
+#define bismillah ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+int main()
+
+{
+    bismillah;
+    int tt;cin>>tt;
+    while(tt--){
+        int n,sum=1;
+        cin>>n;
+        if(n==0){ cout<< "1"<<endl; }
+        else{
+            cout<< n*3<<endl;
+        }
+    }
+
+
+
+
+	return 0;
+}
