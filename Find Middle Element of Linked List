@@ -1,0 +1,21 @@
+///https://www.codechef.com/practice/course/linked-lists/LINKLISTF/problems/LLMID?tab=statement
+
+/*struct Node {
+	int val;
+	struct Node* next;
+	Node(int x){
+		val = x;
+		next = NULL;
+	}
+};*/
+
+int getMiddleElement(Node* head){
+    Node* fast = head;
+    Node* slow = head;
+    while(fast && fast->next ){
+        slow = slow -> next;
+        fast = fast -> next ->next;
+        
+    }
+    return slow->val;
+}
